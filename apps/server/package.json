@@ -1,0 +1,16 @@
+{
+  "name": "@econsim/server",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -b",
+    "start": "node src/index.ts"
+  },
+  "dependencies": {
+    "@econsim/mechanisms": "workspace:*",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.13"
+  }
+}

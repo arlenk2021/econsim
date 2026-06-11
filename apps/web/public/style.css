@@ -1,0 +1,22 @@
+:root { --bg:#0f1117; --card:#1a1d27; --fg:#e6e8ef; --accent:#7c5cff; --theory:#ffb454; --actual:#4ec9b0; }
+* { box-sizing: border-box; }
+body { margin:0; font-family:system-ui,sans-serif; background:var(--bg); color:var(--fg); }
+header { padding:24px; text-align:center; }
+header h1 { margin:0; font-size:32px; }
+.tag { color:#9aa0b4; margin:4px 0 0; }
+main { max-width:640px; margin:0 auto; padding:0 16px 48px; display:grid; gap:16px; }
+.card { background:var(--card); border:1px solid #262a38; border-radius:12px; padding:20px; }
+.card h2 { margin:0 0 12px; font-size:18px; }
+label { display:block; margin:10px 0; font-size:14px; color:#c2c6d6; }
+input, select { width:100%; margin-top:4px; padding:10px; border-radius:8px; border:1px solid #2e3346; background:#0f1117; color:var(--fg); font-size:15px; }
+button { margin-top:12px; margin-right:8px; padding:10px 18px; border:0; border-radius:8px; background:var(--accent); color:white; font-size:15px; cursor:pointer; }
+button:hover { filter:brightness(1.1); }
+.mono { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+.hidden { display:none; }
+.status { min-height:18px; color:#9aa0b4; }
+#roomCode { color:var(--accent); letter-spacing:2px; }
+.legend { font-size:13px; color:#9aa0b4; }
+.sw { display:inline-block; width:12px; height:12px; border-radius:3px; vertical-align:middle; }
+.sw.theory { background:var(--theory); }
+.sw.actual { background:var(--actual); }
+#state { white-space:pre-wrap; background:#0f1117; padding:12px; border-radius:8px; font-size:13px; }

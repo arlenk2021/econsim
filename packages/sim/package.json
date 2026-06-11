@@ -1,0 +1,15 @@
+{
+  "name": "@econsim/sim",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "econsim-sim": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "start": "node src/cli.ts"
+  },
+  "dependencies": {
+    "@econsim/mechanisms": "workspace:*"
+  }
+}

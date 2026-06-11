@@ -1,0 +1,16 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - name: Typecheck + unit tests
+        run: pnpm test
+      - name: Mechanism property suites (10k cases each)
+        run: pnpm test:properties
+      - name: Replay determinism (golden replays re-simulate bit-for-bit)
+        run: pnpm test:replays
+      - name: Purity lint (no Date.now/Math.random in packages/mechanisms)
+        run: pnpm lint:purity

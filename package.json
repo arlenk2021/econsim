@@ -1,0 +1,24 @@
+{
+  "name": "econsim",
+  "version": "0.1.0",
+  "private": true,
+  "description": "econsim.gg — run live auctions and market games with a class, friends, or LLM agents.",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r --filter \"./packages/*\" build",
+    "test": "VITEST_SUITE=unit vitest run",
+    "test:properties": "VITEST_SUITE=properties vitest run",
+    "test:replays": "VITEST_SUITE=replays vitest run",
+    "lint:purity": "node scripts/lint-purity.mjs",
+    "sim": "node packages/sim/src/cli.ts",
+    "dev": "node scripts/dev.mjs",
+    "typecheck": "tsc -b"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "fast-check": "^3.23.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  },
+  "packageManager": "pnpm@10.18.1"
+}

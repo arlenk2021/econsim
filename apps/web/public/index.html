@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>econsim.gg</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎲 econsim.gg</h1>
+    <p class="tag">live auctions &amp; market games — theory vs. reality</p>
+  </header>
+
+  <main>
+    <!-- Host / create -->
+    <section id="create" class="card">
+      <h2>Host a room</h2>
+      <label>Mechanism
+        <select id="mech">
+          <option value="vickrey">Vickrey (second-price)</option>
+          <option value="all-pay">All-pay</option>
+          <option value="public-goods">Public goods</option>
+        </select>
+      </label>
+      <label>Players (comma-separated ids)
+        <input id="players" value="alice,bob,carol" />
+      </label>
+      <button id="createBtn">Create room</button>
+      <p id="createOut" class="mono"></p>
+    </section>
+
+    <!-- Join -->
+    <section id="join" class="card">
+      <h2>Join by code</h2>
+      <label>Code <input id="code" maxlength="5" placeholder="ABCDE" class="mono" /></label>
+      <label>Your id <input id="me" value="alice" /></label>
+      <button id="joinBtn">Join</button>
+    </section>
+
+    <!-- Play -->
+    <section id="play" class="card hidden">
+      <h2>Room <span id="roomCode" class="mono"></span> · <span id="roomMech"></span></h2>
+      <div id="state" class="mono"></div>
+      <label>Your bid / value (cents)
+        <input id="bid" type="number" min="0" value="5000" />
+      </label>
+      <button id="bidBtn">Place bid</button>
+      <button id="closeBtn">Close round (host)</button>
+      <p id="status" class="status"></p>
+    </section>
+
+    <!-- Chart -->
+    <section id="chartCard" class="card hidden">
+      <h2>Theory vs. actual</h2>
+      <canvas id="chart" width="560" height="220"></canvas>
+      <p class="legend"><span class="sw theory"></span> theoretical prediction
+         &nbsp;·&nbsp; <span class="sw actual"></span> actual outcome</p>
+      <div id="payoffs" class="mono"></div>
+    </section>
+  </main>
+
+  <script src="/config.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
